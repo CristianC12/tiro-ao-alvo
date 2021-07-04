@@ -38,17 +38,38 @@ return Math.floor(Math.random() * maximo)
 
 }
 
+var xAleatorio ;
+var yAleatorio ;
 
 function atualizaTela() {
 
+    xAleatorio = aleatoriza(580);
+    yAleatorio = aleatoriza(380);
+
 limpaTela();
-var xAleatorio = aleatoriza(580);
-var yAleatorio = aleatoriza(380);
 
 desenhaAlvo(xAleatorio, yAleatorio);
 }
 
 setInterval(atualizaTela,1000)
+
+function tiro(evento){
+
+    var x = evento.pageX - tela.offsetLeft;
+    var y = evento.pageY - tela.offsetTop;
+
+    if( (x > xAleatorio - raio) &&
+        (x < xAleatorio + raio) &&
+        (y > yAleatorio - raio) &&
+        (y < yAleatorio + raio)) {
+
+        alert ("Acertou!");
+        
+    }
+
+}
+
+tela.onclick = tiro;
 
 
 
