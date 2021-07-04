@@ -4,7 +4,7 @@
 
 var tela = document.querySelector("canvas");
 var pincel = tela.getContext ("2d");
-pincel.fillStyle = "lightgray";
+pincel.fillStyle = "white";
 pincel.fillRect(0, 0, 600, 400)
 
 
@@ -33,15 +33,22 @@ desenhaCirculo(x,y,raio, "red");
 
 function aleatoriza(maximo){
 
-
+return Math.floor(Math.random() * maximo)
 
 
 }
 
-var xAleatorio = aleatoriza(600);
-var yAleatorio = aleatoriza(400);
 
-desenhaAlvo();
+function atualizaTela() {
+
+limpaTela();
+var xAleatorio = aleatoriza(580);
+var yAleatorio = aleatoriza(380);
+
+desenhaAlvo(xAleatorio, yAleatorio);
+}
+
+setInterval(atualizaTela,1000)
 
 
 
