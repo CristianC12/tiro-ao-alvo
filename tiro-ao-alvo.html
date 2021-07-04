@@ -25,11 +25,21 @@ pincel.clearRect(0, 0, 600, 400);
 
 var raio = 10
 
-function desenhaAlvo(){
-desenhaCirculo(100,100,raio+20, "red");
-desenhaCirculo(100,100,raio+10, "white");
-desenhaCirculo(100,100,raio, "red");
+function desenhaAlvo(x,y){
+desenhaCirculo(x,y,raio+20, "red");
+desenhaCirculo(x,y,raio+10, "white");
+desenhaCirculo(x,y,raio, "red");
 }
+
+function aleatoriza(maximo){
+
+
+
+
+}
+
+var xAleatorio = aleatoriza(600);
+var yAleatorio = aleatoriza(400);
 
 desenhaAlvo();
 
